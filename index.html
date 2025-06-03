@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Flip Card Skills Demo</title>
+
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #eef6f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .skill-cards {
+    display: flex;
+    gap: 20px;
+  }
+
+  .skill-card {
+    width: 180px;
+    height: 180px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    cursor: pointer;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  .skill-card:hover {
+    transform: rotateY(180deg);
+  }
+
+  .card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .card-front {
+    background-color: #28a745;
+  }
+
+  .card-front i {
+    font-size: 4rem;
+  }
+
+  .card-back {
+    background-color: #f8f9fa;
+    color: #333;
+    transform: rotateY(180deg);
+    font-weight: normal;
+    font-size: 1rem;
+    text-align: center;
+  }
+</style>
+
+</head>
+<body>
+
+<div class="skill-cards">
+  <div class="skill-card" data-skill="HTML">
+    <div class="card-front">
+      <i class="fab fa-html5"></i>
+      <span>HTML</span>
+    </div>
+    <div class="card-back">
+      Markup language for structuring content.
+    </div>
+  </div>
+
+  <div class="skill-card" data-skill="CSS">
+    <div class="card-front">
+      <i class="fab fa-css3-alt"></i>
+      <span>CSS</span>
+    </div>
+    <div class="card-back">
+      Styles the layout and appearance of web content.
+    </div>
+  </div>
+
+  <div class="skill-card" data-skill="JavaScript">
+    <div class="card-front">
+      <i class="fab fa-js-square"></i>
+      <span>JavaScript</span>
+    </div>
+    <div class="card-back">
+      Brings interactivity and logic to websites.
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
